@@ -9,20 +9,20 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //Feedback piece of state, a single object with multiple properties.
-const feedback = (state = {feelings:'5', understanding:'4', support:'3', comments:'LOTSA COMMENTS'}, action) => {
-    if (action.type === "ADD_FEELINGS"){
+const feedback = (state = {feeling:'5', understanding:'4', support:'3', comments:'LOTSA COMMENTS'}, action) => {
+    if (action.type === "ADD_INFO_0"){
         console.log('Action.type for ADD_FEELINGS')
         return {...state, feelings: action.payload}
     }
-    else if (action.type === "ADD_UNDERSTANDING"){
+    else if (action.type === "ADD_INFO_1"){
         console.log('Action.type for ADD_UNDERSTANDING')
         return {...state, understanding: action.payload}
     }
-    else if (action.type === "ADD_SUPPORT"){
+    else if (action.type === "ADD_INFO_2"){
         console.log('Action.type for ADD_SUPPORT')
         return {...state, support: action.payload} 
     }
-    else if (action.type === "ADD_COMMENTS"){
+    else if (action.type === "ADD_INFO_3"){
         console.log('Action.type for ADD_COMMENTS')
         return {...state, comments: action.payload} 
     }
@@ -30,25 +30,25 @@ const feedback = (state = {feelings:'5', understanding:'4', support:'3', comment
 }
 
 const questions = (state = [{
-    title: "Feeling",
+    title: "feeling",
     image: "images/Feeling2.jpg",
     text1: "How are you feeling today?",
     text2: "Please select a number between 1 and 10.",
     dispatch: "ADD_FEELINGS"
 }, {
-    title: "Understanding",
+    title: "understanding",
     image: "images/Understanding.png",
     text1: "How well are you understanding the content?",
     text2: "Please select a number between 1 and 10.",
     dispatch: "ADD_UNDERSTANDING"
 },{
-    title: "Supported",
+    title: "support",
     image: "images/Supported.jpg",
     text1: "How well are you being supported?",
     text2: "Please select a number between 1 and 10.",
     dispatch: "ADD_SUPPORT"
 },{
-    title: "Comments",
+    title: "comments",
     image: "images/Comments.jpg",
     text1: "Are there any comments you would like to leave?",
     text2: "Please Add your comments below",

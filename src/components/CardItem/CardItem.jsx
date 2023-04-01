@@ -10,10 +10,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-function CardItem({ item }) {
+function CardItem({ item, id }) {
 
     //Local state for capturing the 'Feeling' value.
-    const [feeling, setFeeling] = useState('')
+    const [info, setInfo] = useState('')
 
     //Allows us to utilize the useHistory method.
     const history = useHistory();
@@ -35,21 +35,21 @@ function CardItem({ item }) {
 
     //Function to clear the input field.
     const clearInputField = () => {
-        setFeeling('')
+        setInfo('')
     }
 
-    const addFeeling = () => {
+    const dispatchSurvey = () => {
         dispatch({
-            type: "ADD_FEELINGS",
-            payload: feeling
+            type: `ADD_INFO_${id}`,
+            payload: info
         })
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        addFeeling()
+        dispatchSurvey()
         clearInputField();
-        routeChangeNext()
+        // routeChangeNext()
     }
 
     return (
@@ -57,7 +57,7 @@ function CardItem({ item }) {
             <div className="container">
                 <Card sx={{ maxWidth: 345 }}>
                     <CardMedia
-                        sx={{ height: 250, width: 350, justifyContent: "center"}}
+                        sx={{ height: 250, width: 350, justifyContent: "center" }}
                         image={item.image}
                         title={item.title}
                     />
@@ -69,7 +69,7 @@ function CardItem({ item }) {
                             <Typography variant="body2" color="text.secondary">
                                 {item.text2}
                             </Typography>
-                            <input type="text" value={feeling} onChange={(event) => setFeeling(event.target.value)} />
+                            <input type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
                         </form>
                     </CardContent>
                     <CardActions sx={{ justifyContent: "center" }}>

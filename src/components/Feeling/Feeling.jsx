@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { Carousel } from "react-bootstrap";
 import CardItem from "../CardItem/CardItem";
 import React from "react";
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function Feeling() {
 
@@ -51,20 +53,16 @@ function Feeling() {
         routeChangeNext()
     }
 
-
-
     return (
-        <>
             <div className="container">
                 <Carousel>
-                    {questions.map((item, i) => {
-                        return <Carousel.Item><CardItem key={i} item={item} /></Carousel.Item>
+                    {questions.map((item, index) => {
+                        return <Carousel.Item key={index}>
+                            <CardItem item={item} id={index}/>
+                        </Carousel.Item>
                     })}
                 </Carousel>
             </div>
-
-        </>
-
     )
 }
 
