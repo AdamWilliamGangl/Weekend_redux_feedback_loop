@@ -18,6 +18,30 @@
   font-size: large;
 }
 
+.App-content {
+  display: flex;
+  justify-content: center;
+}
+
+.App-routes {
+  width: 80%;
+}
+
 h4 {
   font-style: italic;
+}
+
+input {
+  margin: 10px;
+  padding: 2px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.containerLarge {
+  display: flex;
+  justify-content: center;
 }
