@@ -37,24 +37,9 @@ const ResponsiveDrawer = props => {
             onClick: () => history.push('/')
         },
         {
-            text: 'Feeling',
+            text: 'Feedback',
             icon: <CircleIcon />,
             onClick: () => history.push('/feeling')
-        },
-        {
-            text: 'Understanding',
-            icon: <CircleIcon />,
-            onClick: () => history.push('/understanding')
-        },
-        {
-            text: 'Support',
-            icon: <CircleIcon />,
-            onClick: () => history.push('/support')
-        },
-        {
-            text: 'Comments',
-            icon: <CircleIcon />,
-            onClick: () => history.push('/comments')
         },
         {
             text: 'Review',

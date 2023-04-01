@@ -13,6 +13,7 @@ import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
+import ReviewItem from '../ReviewItem/ReviewItem';
 import ResponsiveDrawer from '../Drawer/Drawer';
 import BootstrapCarousel from '../Carousel/BootstrapCarousel';
 //Material UI imports
