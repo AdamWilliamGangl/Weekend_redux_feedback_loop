@@ -57,7 +57,7 @@ function CardItem({ item }) {
             <div className="container">
                 <Card sx={{ maxWidth: 345 }}>
                     <CardMedia
-                        sx={{ height: 200 }}
+                        sx={{ height: 250, width: 350, justifyContent: "center"}}
                         image={item.image}
                         title={item.title}
                     />

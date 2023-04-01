@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useTransition } from "react"
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { Carousel } from "react-bootstrap";
 import CardItem from "../CardItem/CardItem";
 import React from "react";
 
@@ -49,15 +50,17 @@ function Feeling() {
         clearInputField();
         routeChangeNext()
     }
-    
+
 
 
     return (
         <>
             <div className="container">
-                {questions.map((item, i) => {
-                    return <CardItem key={i} item={item} />
-                })}
+                <Carousel>
+                    {questions.map((item, i) => {
+                        return <Carousel.Item><CardItem key={i} item={item} /></Carousel.Item>
+                    })}
+                </Carousel>
             </div>
 
         </>

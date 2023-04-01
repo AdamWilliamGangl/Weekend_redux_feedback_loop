@@ -14,6 +14,7 @@ import Submit from '../Submit/Submit';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import ResponsiveDrawer from '../Drawer/Drawer';
+import BootstrapCarousel from '../Carousel/BootstrapCarousel';
 //Material UI imports
 
 
@@ -57,6 +58,7 @@ function App() {
             <Route path="/feedbackResults">
               <FeedbackResults />
             </Route>
+            {/* <BootstrapCarousel /> */}
 
           </div>
         </div>
