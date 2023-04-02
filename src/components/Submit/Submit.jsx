@@ -1,5 +1,6 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, } from "react-router-dom";
 import React from "react";
+import { useState} from "react";
 //Material UI import items
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
@@ -8,19 +9,20 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 
-function Submit(){
 
-        //Function to move us to the next page of the form.
-        const routeChangeNext = () => {
-            let path = '/';
-            history.push(path)
-        }
-    
-        //Allows us to utilize the useHistory method.
-        const history = useHistory();
+function Submit() {
+
+    //Function to move us to the next page of the form.
+    const routeChangeNext = () => {
+        let path = '/';
+        history.push(path)
+    }
+
+    //Allows us to utilize the useHistory method.
+    const history = useHistory();
 
     return (
-           <div className="container">
+        <div className="container">
             <Card sx={{ maxWidth: 500 }}>
                 <CardMedia
                     sx={{ height: 350, width: 500, justifyContent: "center" }}
@@ -38,6 +40,7 @@ function Submit(){
                     </Button>
                 </CardActions>
             </Card>
+
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import React from "react";
 //Material UI import items
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 //Bootstrap import items
 import SweetAlert from "react-bootstrap-sweetalert";
 
@@ -102,7 +103,7 @@ function FeedbackResults() {
                                 <td>{item.comments}</td>
                                 <td>
                                     <Button size="small" variant="contained" onClick={() => deleteButtonHandler(item.id)} >
-                                        Delete
+                                        <DeleteIcon onClick={() => deleteButtonHandler(item.id)}/>
                                     </Button>
                                 </td>
                             </tr>)
