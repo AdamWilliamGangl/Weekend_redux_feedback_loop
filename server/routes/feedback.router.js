@@ -58,4 +58,21 @@ router.post('/', (req, res) => {
     })
 })
 
+//DELETE Route
+
+router.delete('/delete/:id', (req, res) => {
+    console.log('These are req.params', req.params);
+    const feedbackId = req.params.id;
+    const queryText = `DELETE FROM "feedback" WHERE id=$1`
+    pool.query(queryText, [feedbackId])
+    .then((result) => {
+        console.log('Successful DELETE request');
+        res.sendStatus(200)
+    })
+    .catch((error) =>{
+        console.log('Error making database query DELETE', error)
+        res.sendStatus(500)
+    })
+})
+
 module.exports = router

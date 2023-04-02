@@ -18,7 +18,6 @@ function App() {
         <header className="App-header">
           <img src="images/PRIMEFEEDBACK2.png" height="100"/>
         </header>
-
         <div className="App-content">
           <ResponsiveDrawer />
 
@@ -35,7 +34,7 @@ function App() {
               <Submit />
             </Route>
 
-            <Route path="/feedbackResults">
+            <Route path="/admin">
               <FeedbackResults />
             </Route>
     
@@ -46,6 +45,4 @@ function App() {
     </Router>
   );
 }
-
-
 export default App;

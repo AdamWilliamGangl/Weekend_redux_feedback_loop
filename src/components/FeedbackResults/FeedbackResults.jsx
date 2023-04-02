@@ -27,6 +27,21 @@ function FeedbackResults() {
             })
     }
 
+    //Function to POST to DB
+    const deleteFeedback = (id) => {
+        console.log('This is the id to be deleted', id)
+        axios.delete(`/feedback/delete/${id}`)
+            .then((response) => {
+                console.log('Successful DELETE in review.jsx', response)
+            })
+            .catch((error) => {
+                alert('Error in DELETEin review.jsx')
+                console.log('This is the error in DELETE in review.jsx', error)
+            })
+    }
+
+
+    
     return (
         <div className="container">
             <table>
@@ -46,7 +61,7 @@ function FeedbackResults() {
                                 <td>{item.support}</td>
                                 <td>{item.comments}</td>
                                 <td>
-                                    <Button size="small" variant="contained" >
+                                    <Button size="small" variant="contained" onClick={() => deleteFeedback(item.id)} >
                                         Delete
                                     </Button>
                                 </td>

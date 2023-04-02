@@ -48,7 +48,7 @@ const ResponsiveDrawer = props => {
         {
             text: 'Feedback Results',
             icon: <CircleIcon />,
-            onClick: () => history.push('/feedbackResults')
+            onClick: () => history.push('/admin')
         }]
 
     const drawer = (
