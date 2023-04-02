@@ -55,13 +55,13 @@ function CardItem({ item, id }) {
     return (
         <>
             <div className="container">
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: 500 }}>
                     <CardMedia
-                        sx={{ height: 250, width: 350, justifyContent: "center" }}
+                        sx={{ height: 250, width: 500, justifyContent: "center" }}
                         image={item.image}
                         title={item.title}
                     />
-                    <CardContent>
+                    <CardContent sx={{width: '100%'}}>
                         <form onSubmit={handleSubmit}>
                             <Typography gutterBottom variant="h5" component="div">
                                 {item.text1}

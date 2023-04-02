@@ -6,16 +6,11 @@ import {
   HashRouter as Router, Route, Link
 } from 'react-router-dom';
 //Components to import
-import Comments from '../Comments/Comments';
 import FeedbackResults from '../FeedbackResults/FeedbackResults';
 import Feeling from '../Feeling/Feeling';
 import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
-import Support from '../Support/Support';
-import Understanding from '../Understanding/Understanding';
-import ReviewItem from '../ReviewItem/ReviewItem';
 import ResponsiveDrawer from '../Drawer/Drawer';
-import BootstrapCarousel from '../Carousel/BootstrapCarousel';
 //Material UI imports
 
 
@@ -24,8 +19,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4>Don't forget it!</h4>
+          <img src="images/PrimeFeedback.png" height="100"/>
         </header>
 
         <div className="App-content">
@@ -34,18 +28,6 @@ function App() {
           <div className="App-routes">
             <Route path="/feeling">
               <Feeling />
-            </Route>
-
-            <Route path="/understanding">
-              <Understanding />
-            </Route>
-
-            <Route path="/support">
-              <Support />
-            </Route>
-
-            <Route path="/comments">
-              <Comments />
             </Route>
 
             <Route path="/review">
@@ -59,8 +41,7 @@ function App() {
             <Route path="/feedbackResults">
               <FeedbackResults />
             </Route>
-            {/* <BootstrapCarousel /> */}
-
+    
           </div>
         </div>
 

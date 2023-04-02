@@ -24,7 +24,7 @@
 }
 
 .App-routes {
-  width: 80%;
+  width: 100%;
 }
 
 h4 {
@@ -39,7 +39,8 @@ input {
 .container {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 5px;
+  padding: 5px;
 }
 .containerLarge {
   display: flex;
