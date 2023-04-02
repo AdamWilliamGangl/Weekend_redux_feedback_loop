@@ -21,12 +21,6 @@ function CardItem({ item, id }) {
     //Allows us to utilize the useDispatch method.
     const dispatch = useDispatch()
 
-    //Function to move us to the next page of the form.
-    const routeChangeNext = () => {
-        let path = '/understanding';
-        history.push(path)
-    }
-
     //Function to clear the input field.
     const clearInputField = () => {
         setInfo('')
@@ -46,7 +40,6 @@ function CardItem({ item, id }) {
     }
 
     return (
-        <>
             <div className="container">
                 <Card sx={{ maxWidth: 500 }}>
                     <CardMedia
@@ -73,7 +66,6 @@ function CardItem({ item, id }) {
 
                 </Card>
             </div>
-        </>
     )
 }
 
