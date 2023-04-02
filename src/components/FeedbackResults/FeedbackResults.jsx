@@ -3,11 +3,19 @@ import { useState, useEffect } from "react"
 import React from "react";
 //Material UI import items
 import Button from '@mui/material/Button';
+//Bootstrap import items
+import SweetAlert from "react-bootstrap-sweetalert";
 
 function FeedbackResults() {
 
     //State to store the feedback data from the GET
     let [feedbackList, setFeedbackList] = useState([])
+
+    //State recommended in documentation for showing sweet alerts
+    let [showAlert, setShowAlert] = useState(false);
+
+    //temporary state for passing the ID for deleting items- tied to Sweet Alerts
+    let [selectedId, setSelectedId] = useState(null);
 
     //Initial mount to render the page.
     useEffect(() => {
@@ -33,6 +41,7 @@ function FeedbackResults() {
         axios.delete(`/feedback/delete/${id}`)
             .then((response) => {
                 console.log('Successful DELETE in review.jsx', response)
+                getFeedbackList();
             })
             .catch((error) => {
                 alert('Error in DELETEin review.jsx')
@@ -40,8 +49,39 @@ function FeedbackResults() {
             })
     }
 
+    //Delete button handler that combines a Sweet Alert with the DELETE request.
+    const deleteButtonHandler = (id) => {
+        console.log('this is the id', id)
+        setSelectedId(id);
+        setShowAlert({
+          warning: true,
+          showCancel: true,
+          confirmBtnText: "Yes, delete it!",
+          confirmBtnBsStyle: "danger",
+          title: "Are you sure?",
+          focusCancelBtn: true,
+          onConfirm: () => {
+            deleteFeedback(id);
+          },
+          onCancel: () => {
+            console.log("Cancel clicked");
+          },
+        });
+      };
 
-    
+    //Handling for Sweet Alerts on confirmation.
+    const onConfirm = () => {
+        deleteFeedback(selectedId);
+        getFeedbackList();
+        setShowAlert(false)
+    }
+
+    //Handling for Sweet Alerts on cancel.
+    const onCancel = () => {
+        setSelectedId(null);
+        setShowAlert(false);
+    }
+
     return (
         <div className="container">
             <table>
@@ -61,7 +101,7 @@ function FeedbackResults() {
                                 <td>{item.support}</td>
                                 <td>{item.comments}</td>
                                 <td>
-                                    <Button size="small" variant="contained" onClick={() => deleteFeedback(item.id)} >
+                                    <Button size="small" variant="contained" onClick={() => deleteButtonHandler(item.id)} >
                                         Delete
                                     </Button>
                                 </td>
@@ -69,6 +109,18 @@ function FeedbackResults() {
                     })}
                 </tbody>
             </table>
+            {showAlert && (
+        <SweetAlert
+          warning
+          showCancel
+          confirmBtnText="Yes, delete it!"
+          confirmBtnBsStyle="danger"
+          title="Are you sure?"
+          focusCancelBtn
+          onConfirm={onConfirm}
+          onCancel={onCancel}
+        />
+      )}
         </div>
     )
 }
