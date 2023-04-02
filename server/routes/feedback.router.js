@@ -42,4 +42,20 @@ router.get('/', (req, res) => {
     })
 })
 
+//POST Route
+router.post('/', (req, res) => {
+    let feedbackItem = req.body;
+    const queryText =  `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+    VALUES
+    ($1, $2, $3, $4)`
+    pool.query(queryText, [feedbackItem.feeling, feedbackItem.understanding, feedbackItem.support, feedbackItem.comments])
+    .then((result) => {
+        res.sendStatus(201)
+    })
+    .catch((error) => {
+        console.log(`Error making DB query (POST)`, error)
+        res.sendStatus(500)
+    })
+})
+
 module.exports = router
