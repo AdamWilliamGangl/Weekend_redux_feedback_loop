@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 import { Carousel } from "react-bootstrap";
 import CardItem from "../CardItem/CardItem";
 import React from "react";
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
 function Feeling() {
 
@@ -44,13 +42,6 @@ function Feeling() {
             type: "ADD_FEELINGS",
             payload: feeling
         })
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        addFeeling()
-        clearInputField();
-        routeChangeNext()
     }
 
     return (
