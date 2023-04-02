@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //Feedback piece of state, a single object with multiple properties.
-const feedback = (state = {}, action) => {
+const feedback = (state = {feeling: '999', understanding: '999', support:'999', comments:'No Entry Added'}, action) => {
     if (action.type === "ADD_INFO_0"){
         console.log('Action.type for ADD_FEELINGS')
         return {...state, feeling: action.payload}
