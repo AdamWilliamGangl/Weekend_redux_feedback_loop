@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Carousel } from "react-bootstrap";
 import CardItem from "../CardItem/CardItem";
@@ -22,21 +23,18 @@ function Feeling() {
     }
 
     return (
-        <div className="containeFeeling">
-            <Carousel>
+        <div className="containFeeling">
+            <Carousel variant="dark" interval={null}>
                 {questions.map((item, index) => {
-                    return <Carousel.Item key={index}>
+                    return <Carousel.Item key={index} >
                         <CardItem item={item} id={index} />
                     </Carousel.Item>
                 })}
             </Carousel>
             <div>
-            <Button size="small" variant="contained" onClick={routeChangeNext} >
-                Review Feedback
-            </Button>
-            </div>
-            <div>
-
+                <Button size="small" variant="contained" onClick={routeChangeNext} >
+                    Review Feedback
+                </Button>
             </div>
         </div>
     )

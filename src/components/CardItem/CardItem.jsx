@@ -10,7 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-function CardItem({ item, id }) {
+function CardItem({ item, id}) {
 
     //Local state for capturing the 'Feeling' value.
     const [info, setInfo] = useState('')
@@ -33,8 +33,9 @@ function CardItem({ item, id }) {
         })
     }
 
+
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         dispatchSurvey()
         // clearInputField();
     }
@@ -59,7 +60,7 @@ function CardItem({ item, id }) {
                         </form>
                     </CardContent>
                     <CardActions sx={{ justifyContent: "center" }}>
-                        <Button size="small" variant="contained" onClick={handleSubmit}>
+                        <Button size="small" variant="contained" onClick={handleSubmit()}>
                             Add
                         </Button>
                     </CardActions>
