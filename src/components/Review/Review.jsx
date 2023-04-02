@@ -17,9 +17,20 @@ function Review() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatchSurvey()
-        clearInputField();
+        addFeedback(feedback)
         // routeChangeNext()
+    }
+
+    const addFeedback = (feedback) => {
+        console.log('This is feedback', feedback)
+        axios.post('/feedback', feedback)
+        .then((response) => {
+            console.log('Successful POST in review.jsx', response)
+        })
+        .catch((error) => {
+            alert('Error in POST in review.jsx')
+            console.log('This is the error in POST in review.jsx', error)
+        })
     }
 
 
