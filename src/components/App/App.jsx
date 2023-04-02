@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-//Imported Router from React Router
 import {
   HashRouter as Router, Route, Link
 } from 'react-router-dom';
@@ -10,7 +9,6 @@ import Feeling from '../Feeling/Feeling';
 import Review from '../Review/Review';
 import Submit from '../Submit/Submit';
 import ResponsiveDrawer from '../Drawer/Drawer';
-//Material UI imports
 
 
 function App() {

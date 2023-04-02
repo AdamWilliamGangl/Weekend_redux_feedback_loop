@@ -21,7 +21,7 @@ function Review() {
 
     //Function to move us to the last page of the form.
     const routeChangePrev = () => {
-        let path = '/feeling';
+        let path = '/';
         history.push(path)
     }
 
@@ -81,7 +81,6 @@ function Review() {
                         Submit Feedback!
                     </Button>
                 </CardActions>
-
             </Card>
         </div>
     )

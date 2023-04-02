@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useTransition } from "react"
+import { useState } from "react"
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -7,11 +7,7 @@ import CardItem from "../CardItem/CardItem";
 import React from "react";
 //Material UI import items
 import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardMedia from '@mui/material/CardMedia';
+
 
 function Feeling() {
 
@@ -29,26 +25,8 @@ function Feeling() {
 
     //Function to move us to the next page of the form.
     const routeChangeNext = () => {
-        let path = '/understanding';
+        let path = '/review';
         history.push(path)
-    }
-
-    //Function to move us to the last page of the form.
-    const routeChangePrev = () => {
-        let path = '/home';
-        history.push(path)
-    }
-
-    //Function to clear the input field.
-    const clearInputField = () => {
-        setFeeling('')
-    }
-
-    const addFeeling = () => {
-        dispatch({
-            type: "ADD_FEELINGS",
-            payload: feeling
-        })
     }
 
     return (
@@ -66,7 +44,7 @@ function Feeling() {
             </Button>
             </div>
             <div>
-                
+
             </div>
         </div>
     )

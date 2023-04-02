@@ -38,7 +38,7 @@ const questions = (state = [{
 }, {
     title: "understanding",
     image: "images/Understanding.png",
-    text1: "How well are you understanding the content?",
+    text1: "How well do you understand the content?",
     text2: "Please select a number between 1 and 10.",
     dispatch: "ADD_UNDERSTANDING"
 },{
@@ -50,7 +50,7 @@ const questions = (state = [{
 },{
     title: "comments",
     image: "images/Comments.jpg",
-    text1: "Are there any comments you would like to leave?",
+    text1: "Do you have any comments for us?",
     text2: "Please Add your comments below",
     dispatch: "ADD_COMMENTS"
 }], action) => {

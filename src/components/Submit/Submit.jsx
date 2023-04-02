@@ -1,5 +1,3 @@
-import axios from "axios"
-import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
 import React from "react";
 //Material UI import items
@@ -14,7 +12,7 @@ function Submit(){
 
         //Function to move us to the next page of the form.
         const routeChangeNext = () => {
-            let path = '/feeling';
+            let path = '/';
             history.push(path)
         }
     
@@ -22,7 +20,6 @@ function Submit(){
         const history = useHistory();
 
     return (
-        <>
            <div className="container">
             <Card sx={{ maxWidth: 500 }}>
                 <CardMedia
@@ -40,10 +37,8 @@ function Submit(){
                         Submit More Feedback!
                     </Button>
                 </CardActions>
-
             </Card>
         </div>
-        </>
     )
 }
 
