@@ -5,6 +5,7 @@ import { Carousel } from 'react-bootstrap'
 export default function BootstrapCarousel() {
     const [index, setIndex] = useState(0);
 
+    //Handler for setting the index change for the carousel.
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
     };
@@ -30,7 +31,6 @@ export default function BootstrapCarousel() {
                     src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.png"
                     alt="Second slide"
                 />
-
                 <Carousel.Caption>
                     <h3>Second slide label</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -43,7 +43,6 @@ export default function BootstrapCarousel() {
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
                     alt="Third slide"
                 />
-
                 <Carousel.Caption>
                     <h3>Third slide label</h3>
                     <p>

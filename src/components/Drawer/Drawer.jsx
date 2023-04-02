@@ -1,5 +1,7 @@
 import * as React from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+//Material UI import items
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,9 +14,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import CircleIcon from '@mui/icons-material/Circle';
-import { withRouter } from 'react-router-dom';
-import { makeStyles } from '@mui/material';
-
 
 const drawerWidth = 175;
 
@@ -75,21 +74,21 @@ const ResponsiveDrawer = props => {
                 {itemsListLower.map((item, index) => {
                     const { text, icon, onClick } = item;
                     return (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton onClick={onClick}>
-                            <ListItemIcon>
-                            {icon && <ListItemIcon>{icon}</ListItemIcon>}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                )})}
+                        <ListItem key={text} disablePadding>
+                            <ListItemButton onClick={onClick}>
+                                <ListItemIcon>
+                                    {icon && <ListItemIcon>{icon}</ListItemIcon>}
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItemButton>
+                        </ListItem>
+                    )
+                })}
             </List>
         </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
-
 
     return (
         <Box sx={{ display: 'flex' }}>

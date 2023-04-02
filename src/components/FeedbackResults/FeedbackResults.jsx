@@ -55,20 +55,20 @@ function FeedbackResults() {
         console.log('this is the id', id)
         setSelectedId(id);
         setShowAlert({
-          warning: true,
-          showCancel: true,
-          confirmBtnText: "Yes, delete it!",
-          confirmBtnBsStyle: "danger",
-          title: "Are you sure?",
-          focusCancelBtn: true,
-          onConfirm: () => {
-            deleteFeedback(id);
-          },
-          onCancel: () => {
-            console.log("Cancel clicked");
-          },
+            warning: true,
+            showCancel: true,
+            confirmBtnText: "Yes, delete it!",
+            confirmBtnBsStyle: "danger",
+            title: "Are you sure?",
+            focusCancelBtn: true,
+            onConfirm: () => {
+                deleteFeedback(id);
+            },
+            onCancel: () => {
+                console.log("Cancel clicked");
+            },
         });
-      };
+    };
 
     //Handling for Sweet Alerts on confirmation.
     const onConfirm = () => {
@@ -103,7 +103,7 @@ function FeedbackResults() {
                                 <td>{item.comments}</td>
                                 <td>
                                     <Button size="small" variant="contained" onClick={() => deleteButtonHandler(item.id)} >
-                                        <DeleteIcon onClick={() => deleteButtonHandler(item.id)}/>
+                                        <DeleteIcon onClick={() => deleteButtonHandler(item.id)} />
                                     </Button>
                                 </td>
                             </tr>)
@@ -111,17 +111,17 @@ function FeedbackResults() {
                 </tbody>
             </table>
             {showAlert && (
-        <SweetAlert
-          warning
-          showCancel
-          confirmBtnText="Yes, delete it!"
-          confirmBtnBsStyle="danger"
-          title="Are you sure?"
-          focusCancelBtn
-          onConfirm={onConfirm}
-          onCancel={onCancel}
-        />
-      )}
+                <SweetAlert
+                    warning
+                    showCancel
+                    confirmBtnText="Yes, delete it!"
+                    confirmBtnBsStyle="danger"
+                    title="Are you sure?"
+                    focusCancelBtn
+                    onConfirm={onConfirm}
+                    onCancel={onCancel}
+                />
+            )}
         </div>
     )
 }

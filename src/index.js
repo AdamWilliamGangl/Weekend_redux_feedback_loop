@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App/App';
-
 //Imported items from Redux and Redux logger
 import { combineReducers, applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //Feedback piece of state, a single object with multiple properties.
-const feedback = (state = {feeling:'10', understanding:'10', support:'10', comments:'Kowabunga'}, action) => {
+const feedback = (state = {}, action) => {
     if (action.type === "ADD_INFO_0"){
         console.log('Action.type for ADD_FEELINGS')
         return {...state, feeling: action.payload}
@@ -28,7 +27,7 @@ const feedback = (state = {feeling:'10', understanding:'10', support:'10', comme
     }
     return state
 }
-
+//This could likely be stored in the server instead...
 const questions = (state = [{
     title: "feeling",
     image: "images/Feeling2.jpg",

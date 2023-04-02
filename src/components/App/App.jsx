@@ -16,31 +16,25 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <img src="images/PRIMEFEEDBACK2.png" height="100"/>
+          <img src="images/PRIMEFEEDBACK2.png" height="100" />
         </header>
         <div className="App-content">
           <ResponsiveDrawer />
-
           <div className="App-routes">
             <Route exact path="/">
               <Feeling />
             </Route>
-
             <Route path="/review">
               <Review />
             </Route>
-
             <Route path="/submit">
               <Submit />
             </Route>
-
             <Route path="/admin">
               <FeedbackResults />
             </Route>
-    
           </div>
         </div>
-
       </div>
     </Router>
   );

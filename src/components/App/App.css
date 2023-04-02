@@ -1,8 +1,13 @@
 .App {
   text-align: center;
-  background: rgb(30,30,51);
-  background: linear-gradient(0deg, rgba(30,30,51,0.3688068977591037) 0%, rgba(255,255,255,1) 3%, rgba(23,105,199,1) 100%);
-  height: 115vh
+  background: rgb(30, 30, 51);
+  background: linear-gradient(
+    0deg,
+    rgba(30, 30, 51, 0.3688068977591037) 0%,
+    rgba(255, 255, 255, 1) 3%,
+    rgba(23, 105, 199, 1) 100%
+  );
+  height: 115vh;
 }
 
 .App-header {
@@ -61,7 +66,8 @@ table {
   width: 80%;
 }
 
-th, td {
+th,
+td {
   border: 1px solid black;
 }
 
@@ -70,6 +76,5 @@ tr:nth-child(odd) {
 }
 
 button {
-  cursor:grab
+  cursor: grab;
 }
-

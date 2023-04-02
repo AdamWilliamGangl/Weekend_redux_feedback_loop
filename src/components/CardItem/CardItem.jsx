@@ -10,7 +10,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-function CardItem({ item, id}) {
+function CardItem({ item, id }) {
 
     //Local state for capturing the 'Feeling' value.
     const [info, setInfo] = useState('')
@@ -26,7 +26,7 @@ function CardItem({ item, id}) {
 
     //Function for controlling the toggle.
     const toggleFields = () => {
-    setCardFields(!cardFields)
+        setCardFields(!cardFields)
     }
 
     //Function to dispatch survey results to Redux
@@ -43,63 +43,64 @@ function CardItem({ item, id}) {
         toggleFields()
     }
 
-    //Function to manage conditional rendering of objects on the page
+    //Function to manage conditional rendering of objects on the page. With more time I would add additional changes rather than just the field disabled.
     const manageToggledFields = () => {
-        if(cardFields === true){
+        if (cardFields === true) {
             return (<Card sx={{ maxWidth: 500 }}>
-            <CardMedia
-                sx={{ height: 250, width: 500, justifyContent: "center" }}
-                image={item.image}
-                title={item.title}
-            />
-            <CardContent sx={{width: '100%'}}>
-                <form onSubmit={handleSubmit}>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {item.text1}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {item.text2}
-                    </Typography>
-                    <input type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
-                </form>
-            </CardContent>
-            <CardActions sx={{ justifyContent: "center" }}>
-                <Button size="small" variant="contained" onClick={handleSubmit}>
-                    Add
-                </Button>
-            </CardActions>
-        </Card> )}
-        else {return (<Card sx={{ maxWidth: 500 }}>
-            <CardMedia
-                sx={{ height: 250, width: 500, justifyContent: "center" }}
-                image={item.image}
-                title={item.title}
-            />
-            <CardContent sx={{width: '100%'}} >
-                <form onSubmit={handleSubmit}>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {item.text1}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {item.text2}
-                    </Typography>
-                    <input disabled type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
-                </form>
-            </CardContent>
-            <CardActions sx={{ justifyContent: "center" }}>
-                <Button size="small" variant="contained" onClick={handleSubmit}>
-                    Change feedback
-                </Button>
-            </CardActions>
-        </Card> )
+                <CardMedia
+                    sx={{ height: 250, width: 500, justifyContent: "center" }}
+                    image={item.image}
+                    title={item.title}
+                />
+                <CardContent sx={{ width: '100%' }}>
+                    <form onSubmit={handleSubmit}>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {item.text1}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {item.text2}
+                        </Typography>
+                        <input type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
+                    </form>
+                </CardContent>
+                <CardActions sx={{ justifyContent: "center" }}>
+                    <Button size="small" variant="contained" onClick={handleSubmit}>
+                        Add
+                    </Button>
+                </CardActions>
+            </Card>)
+        }
+        else {
+            return (<Card sx={{ maxWidth: 500 }}>
+                <CardMedia
+                    sx={{ height: 250, width: 500, justifyContent: "center" }}
+                    image={item.image}
+                    title={item.title}
+                />
+                <CardContent sx={{ width: '100%' }} >
+                    <form onSubmit={handleSubmit}>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {item.text1}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            {item.text2}
+                        </Typography>
+                        <input disabled type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
+                    </form>
+                </CardContent>
+                <CardActions sx={{ justifyContent: "center" }}>
+                    <Button size="small" variant="contained" onClick={handleSubmit}>
+                        Change feedback
+                    </Button>
+                </CardActions>
+            </Card>)
         }
     }
 
-
     return (
-            <div className="container">
-                {manageToggledFields()}
-            </div>
+        <div className="container">
+            {manageToggledFields()}
+        </div>
     )
 }
 
