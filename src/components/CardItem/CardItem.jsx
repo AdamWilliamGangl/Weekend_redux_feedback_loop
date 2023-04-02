@@ -21,11 +21,6 @@ function CardItem({ item, id}) {
     //Allows us to utilize the useDispatch method.
     const dispatch = useDispatch()
 
-    //Function to clear the input field.
-    const clearInputField = () => {
-        setInfo('')
-    }
-
     //Allows us to manage toggle state for fields.
     const [cardFields, setCardFields] = useState(true)
 
@@ -47,11 +42,6 @@ function CardItem({ item, id}) {
         dispatchSurvey()
         toggleFields()
     }
-
-    //Function to handle form validation
-    // const handleValidation = () => {
-    //     if ()
-    // }
 
     //Function to manage conditional rendering of objects on the page
     const manageToggledFields = () => {

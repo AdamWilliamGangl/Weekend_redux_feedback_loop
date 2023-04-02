@@ -33,26 +33,22 @@ const questions = (state = [{
     title: "feeling",
     image: "images/Feeling2.jpg",
     text1: "How are you feeling today?",
-    text2: "Please select a number between 1 and 10.",
-    dispatch: "ADD_FEELINGS"
+    text2: "Please select a number between 1 and 10."
 }, {
     title: "understanding",
     image: "images/Understanding.png",
     text1: "How well do you understand the content?",
-    text2: "Please select a number between 1 and 10.",
-    dispatch: "ADD_UNDERSTANDING"
+    text2: "Please select a number between 1 and 10."
 },{
     title: "support",
     image: "images/Supported.jpg",
     text1: "How well are you being supported?",
-    text2: "Please select a number between 1 and 10.",
-    dispatch: "ADD_SUPPORT"
+    text2: "Please select a number between 1 and 10."
 },{
     title: "comments",
     image: "images/Comments.jpg",
     text1: "Do you have any comments for us?",
-    text2: "Please Add your comments below",
-    dispatch: "ADD_COMMENTS"
+    text2: "Please Add your comments below"
 }], action) => {
     return state
 }
