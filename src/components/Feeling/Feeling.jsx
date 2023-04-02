@@ -1,5 +1,4 @@
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Carousel } from "react-bootstrap";
 import CardItem from "../CardItem/CardItem";
