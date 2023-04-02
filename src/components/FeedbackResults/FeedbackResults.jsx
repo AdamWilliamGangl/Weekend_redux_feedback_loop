@@ -1,6 +1,5 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { useHistory } from "react-router-dom";
 import React from "react";
 //Material UI import items
 import Button from '@mui/material/Button';
@@ -29,7 +28,7 @@ function FeedbackResults() {
     }
 
     return (
-        <><div className="container">
+        <div className="container">
             <table>
                 <tbody>
                     <tr>
@@ -53,11 +52,9 @@ function FeedbackResults() {
                                 </td>
                             </tr>)
                     })}
-
                 </tbody>
             </table>
         </div>
-        </>
     )
 }
 

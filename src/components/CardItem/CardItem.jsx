@@ -36,7 +36,7 @@ function CardItem({ item, id }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatchSurvey()
-        clearInputField();
+        // clearInputField();
     }
 
     return (
@@ -60,7 +60,7 @@ function CardItem({ item, id }) {
                     </CardContent>
                     <CardActions sx={{ justifyContent: "center" }}>
                         <Button size="small" variant="contained" onClick={handleSubmit}>
-                            Next
+                            Add
                         </Button>
                     </CardActions>
 
