@@ -26,6 +26,15 @@ function CardItem({ item, id}) {
         setInfo('')
     }
 
+    //Allows us to manage toggle state for fields.
+    const [cardFields, setCardFields] = useState(true)
+
+    //Function for controlling the toggle.
+    const toggleFields = () => {
+    setCardFields(!cardFields)
+    }
+
+    //Function to dispatch survey results to Redux
     const dispatchSurvey = () => {
         dispatch({
             type: `ADD_INFO_${id}`,
@@ -33,39 +42,67 @@ function CardItem({ item, id}) {
         })
     }
 
-
     const handleSubmit = (event) => {
-        // event.preventDefault();
         dispatchSurvey()
-        // clearInputField();
+        toggleFields()
     }
+
+    const manageToggledFields = () => {
+        if(cardFields === true){
+            return (<Card sx={{ maxWidth: 500 }}>
+            <CardMedia
+                sx={{ height: 250, width: 500, justifyContent: "center" }}
+                image={item.image}
+                title={item.title}
+            />
+            <CardContent sx={{width: '100%'}}>
+                <form onSubmit={handleSubmit}>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {item.text1}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {item.text2}
+                    </Typography>
+                    <input type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
+                </form>
+            </CardContent>
+            <CardActions sx={{ justifyContent: "center" }}>
+                <Button size="small" variant="contained" onClick={handleSubmit}>
+                    Add
+                </Button>
+            </CardActions>
+        </Card> )}
+        else {return (<Card sx={{ maxWidth: 500 }}>
+            <CardMedia
+                sx={{ height: 250, width: 500, justifyContent: "center" }}
+                image={item.image}
+                title={item.title}
+            />
+            <CardContent sx={{width: '100%'}}>
+                <form onSubmit={handleSubmit}>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {item.text1}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {item.text2}
+                    </Typography>
+                    <input disabled type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
+                </form>
+            </CardContent>
+            <CardActions sx={{ justifyContent: "center" }}>
+                <Button size="small" variant="contained" onClick={handleSubmit}>
+                    Change feedback
+                </Button>
+            </CardActions>
+        </Card> )
+
+        }
+    }
+
 
     return (
             <div className="container">
-                <Card sx={{ maxWidth: 500 }}>
-                    <CardMedia
-                        sx={{ height: 250, width: 500, justifyContent: "center" }}
-                        image={item.image}
-                        title={item.title}
-                    />
-                    <CardContent sx={{width: '100%'}}>
-                        <form onSubmit={handleSubmit}>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {item.text1}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {item.text2}
-                            </Typography>
-                            <input type="text" value={info} onChange={(event) => setInfo(event.target.value)} />
-                        </form>
-                    </CardContent>
-                    <CardActions sx={{ justifyContent: "center" }}>
-                        <Button size="small" variant="contained" onClick={handleSubmit()}>
-                            Add
-                        </Button>
-                    </CardActions>
-
-                </Card>
+                {manageToggledFields()}
             </div>
     )
 }
