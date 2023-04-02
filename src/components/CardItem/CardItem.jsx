@@ -27,12 +27,6 @@ function CardItem({ item, id }) {
         history.push(path)
     }
 
-    //Function to move us to the last page of the form.
-    const routeChangePrev = () => {
-        let path = '/home';
-        history.push(path)
-    }
-
     //Function to clear the input field.
     const clearInputField = () => {
         setInfo('')
@@ -49,7 +43,6 @@ function CardItem({ item, id }) {
         event.preventDefault();
         dispatchSurvey()
         clearInputField();
-        // routeChangeNext()
     }
 
     return (

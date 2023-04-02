@@ -10,7 +10,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CircleIcon from '@mui/icons-material/Circle';
@@ -29,14 +28,9 @@ const ResponsiveDrawer = props => {
     const { history } = props
     const itemsList = [
         {
-            text: 'Home',
-            icon: <CircleIcon />,
-            onClick: () => history.push('/')
-        },
-        {
             text: 'Feedback',
             icon: <CircleIcon />,
-            onClick: () => history.push('/feeling')
+            onClick: () => history.push('/')
         },
         {
             text: 'Review',
@@ -46,14 +40,14 @@ const ResponsiveDrawer = props => {
         {
             text: 'Submit',
             icon: <CircleIcon />,
-            onClick: () => history.push('/review')
+            onClick: () => history.push('/submit')
         }]
 
     const itemsListLower = [
         {
             text: 'Feedback Results',
             icon: <CircleIcon />,
-            onClick: () => history.push('/review')
+            onClick: () => history.push('/feedbackResults')
         }]
 
     const drawer = (

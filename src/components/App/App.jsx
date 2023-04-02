@@ -25,7 +25,7 @@ function App() {
           <ResponsiveDrawer />
 
           <div className="App-routes">
-            <Route path="/feeling">
+            <Route exact path="/">
               <Feeling />
             </Route>
 
