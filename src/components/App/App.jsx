@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <img src="images/PrimeFeedback.png" height="100"/>
+          <img src="images/PRIMEFEEDBACK2.png" height="100"/>
         </header>
 
         <div className="App-content">

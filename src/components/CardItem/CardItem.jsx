@@ -42,11 +42,18 @@ function CardItem({ item, id}) {
         })
     }
 
+    //Function to handle multiple functions on submit button click.
     const handleSubmit = (event) => {
         dispatchSurvey()
         toggleFields()
     }
 
+    //Function to handle form validation
+    // const handleValidation = () => {
+    //     if ()
+    // }
+
+    //Function to manage conditional rendering of objects on the page
     const manageToggledFields = () => {
         if(cardFields === true){
             return (<Card sx={{ maxWidth: 500 }}>
@@ -78,7 +85,7 @@ function CardItem({ item, id}) {
                 image={item.image}
                 title={item.title}
             />
-            <CardContent sx={{width: '100%'}}>
+            <CardContent sx={{width: '100%'}} >
                 <form onSubmit={handleSubmit}>
                     <Typography gutterBottom variant="h5" component="div">
                         {item.text1}
@@ -95,7 +102,6 @@ function CardItem({ item, id}) {
                 </Button>
             </CardActions>
         </Card> )
-
         }
     }
 
