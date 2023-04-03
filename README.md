@@ -45,9 +45,18 @@ The final page is a Feedback Results page. The page is currently not setup for m
 
 ### Setting Up This Repo
 - Create a database using the information provided in the data.sql file.
-- Install npm using the command 'npm install'
-- Start the server using the command 'npm run server'
-- Start the client using the command 'npm run client'
+- Install npm.
+```
+npm install
+```
+- Start the server.
+```
+npm run server
+```
+- Start the client.
+```
+npm run client
+```
 
 <br />
 
