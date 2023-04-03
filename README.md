@@ -43,6 +43,14 @@ The final page is a Feedback Results page. The page is currently not setup for m
 
 <br />
 
+### Setting Up This Repo
+- Create a database using the information provided in the data.sql file.
+- Install npm using the command 'npm install'
+- Start the server using the command 'npm run server'
+- Start the client using the command 'npm run client'
+
+<br />
+
 ### Things To Add In the Future
 
 - Allow input validation for individual input fields.

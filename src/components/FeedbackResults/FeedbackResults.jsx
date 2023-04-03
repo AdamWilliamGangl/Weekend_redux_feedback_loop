@@ -45,7 +45,7 @@ function FeedbackResults() {
                 getFeedbackList();
             })
             .catch((error) => {
-                alert('Error in DELETEin review.jsx')
+                alert('Error in DELETE in review.jsx')
                 console.log('This is the error in DELETE in review.jsx', error)
             })
     }
