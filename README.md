@@ -65,6 +65,7 @@ npm run client
 - Allow input validation for individual input fields.
 - Add the ability to flag an existing feedback entry for further review on the /admin view.
 - Add user types for a standard user and an admin.
+- Move Redux side questions to the server for security.
 
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
