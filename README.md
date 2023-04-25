@@ -1,8 +1,10 @@
 # Feedback Loop Website w/ React and Redux
 
+<img width="1424" alt="Screenshot 2023-04-03 at 11 13 35 AM" src="https://user-images.githubusercontent.com/117591917/234155398-be33aa82-3f5c-4c47-b907-5ee8b714206b.png">
+
 ## Description
 
-The client wanted a multi-part form that allows users to leave feedback for the day. 
+Prime Feedback is a multi-part form that allows users to leave feedback for the day. 
 There are 4 primary parts of the website, which are as follows:
 <br /><br />
 
